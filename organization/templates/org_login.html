@@ -1,0 +1,56 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="px-4 py-5 my-5 text-center">
+        <img
+          class="d-block mx-auto mb-4"
+          src="{%static 'GSU_logo-2.png'%}"
+          alt=""
+          width="72"
+          height="57"
+        />
+        <h1 class="display-1 fw-bold text-body-emphasis">Tiger Service</h1>
+        <h3 class="display-8 text-body-emphasis">
+          Make an Impact. Get Involved.
+        </h3>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <select name="school_name" class="form-control mt-5 py-3" required>
+                            <option value="" disabled selected>Select an Organization</option>
+                            {% for org in organizations %}
+                            <option value="{{ org.user.username }}">{{ org.user.username }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-floating mt-1">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required />
+                        <label>Password</label>
+                    </div>
+                    <button class="btn btn-warning w-100 mt-2 py-2" type="submit">Sign in</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
