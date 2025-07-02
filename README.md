@@ -40,3 +40,13 @@ Organizations can track who attended and how many hours each student earned.
 
 - Email: Django Email backend (SMTP/local)
 
+## Developers
+- Adetayo Kaleijaye
+  CS @ Grambling State University
+  Email: akalejaiye@gsumail.gram.edu
+- Joshua Udo
+  CS @ Grambling State University
+  Email: judo@gsumail.gram.edu
+- Enoch Owoade
+  Engr. Tech. & CS @ Grambling State University
+  Email: eowoade@gsumail.gram.edu
