@@ -1,5 +1,5 @@
 ## TigerService
-Tiger Service is a web app created for Grambling State University students to streamline of access to community service projects being hosted by various organizations on campus. Students can browse, track and register for service events all from the comfort of their devices.
+Tiger Service is a web app created for Grambling State University students to streamline access to community service projects being hosted by various organizations on campus. Students can browse, track and register for service events all from the comfort of their devices.
 
 ## Why TigerService?
 Students often struggle to find verified service learning opportunities while organizations face challenges with promotion, registration, tracking and hour disbursement.
