@@ -14,6 +14,8 @@ import uuid
 from organization.models import Event
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db import IntegrityError
+
 
 @login_required
 def events(request):
@@ -52,11 +54,15 @@ def register(request):
             user.save()
 
             # Save g_number in Profile
-            Profile.objects.create(
-                user=user,
-                g_number=form.cleaned_data['g_number']
-            )
-
+            try:
+                Profile.objects.create(
+                    user=user,
+                    g_number=form.cleaned_data['g_number']
+                )
+            except IntegrityError: # already created an account 
+                messages.error(request, "An account with this user already exists")
+                user.delete()
+                return redirect('register')
             # Send verification email...
             return redirect('login')
     else:
